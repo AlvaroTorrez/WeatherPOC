@@ -292,3 +292,9 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+### XamarinStudio ###
+bin/
+obj/
+*.userprefs
+.packages
