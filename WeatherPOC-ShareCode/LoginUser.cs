@@ -17,5 +17,9 @@ namespace WeatherPOC_ShareCode
             // In this section we use the API to validate the user.
             return true;
         }
+
+        public bool userWasLogged() {
+            return true;
+        }
     }
 }

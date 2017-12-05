@@ -3,6 +3,8 @@ using Android.Widget;
 using Android.OS;
 using Android.Views;
 using System;
+using WeatherPOC_ShareCode;
+using Android.Content;
 
 namespace WeatherPOC_Android {
     [Activity(Label = "WeatherPOC_Android", MainLauncher = true, Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
@@ -11,10 +13,16 @@ namespace WeatherPOC_Android {
         private TextView _userEmail;
         private TextView _userPassword;
         private TextView _loginButton;
+        private LoginUser loginUser;
 
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
+            loginUser = new LoginUser();
+            if (loginUser.userWasLogged()) {
+                var startMainWeatherActivity = new Intent(this, typeof(MainWeatherActivity));
+                StartActivity(startMainWeatherActivity);
+            }
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
