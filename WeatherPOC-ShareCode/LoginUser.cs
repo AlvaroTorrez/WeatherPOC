@@ -19,7 +19,7 @@ namespace WeatherPOC_ShareCode
         }
 
         public bool userWasLogged() {
-            return true;
+            return false;
         }
     }
 }

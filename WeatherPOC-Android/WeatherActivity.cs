@@ -12,8 +12,8 @@ using Android.Widget;
 
 namespace WeatherPOC_Android
 {
-    [Activity(Label = "MainWeatherActivity")]
-    public class MainWeatherActivity : Activity
+    [Activity(Label = "WeatherActivity", Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
+    public class WeatherActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
