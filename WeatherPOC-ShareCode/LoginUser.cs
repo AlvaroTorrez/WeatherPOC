@@ -8,18 +8,12 @@ namespace WeatherPOC_ShareCode
     
     public class LoginUser
     {
+        public bool SuccessfulLogin  { set; get; }
+        public string UserName { set; get; }
 
-        public LoginUser() {
-            // Loading some cache if there is.
-        }
-
-        public bool canLogin(String userName, String password) {
-            // In this section we use the API to validate the user.
-            return true;
-        }
-
-        public bool userWasLogged() {
-            return false;
+        public LoginUser(String userName, String password) {
+            this.SuccessfulLogin = WebService.loginUserRequest(userName, password);
+            this.UserName = userName;
         }
     }
 }

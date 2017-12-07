@@ -6,19 +6,19 @@ using System;
 using WeatherPOC_ShareCode;
 using Android.Content;
 using System.Threading;
+using Android.Preferences;
+using Newtonsoft.Json;
 
 namespace WeatherPOC_Android {
     [Activity(Label = "WeatherPOC_Android", MainLauncher = true, Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
     public class MainActivity : Activity {
-
-        private LoginUser loginUser;
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
             new Thread(new ThreadStart(() => {
-                Thread.Sleep(4 * 1000);
+                Thread.Sleep(3 * 1000);
                 this.RunOnUiThread(() => {
                     validateLogin();
                 });
@@ -26,10 +26,17 @@ namespace WeatherPOC_Android {
         }
 
         private void validateLogin() {
-            loginUser = new LoginUser();
+            // Retrive the keeped information of the session
+            Context mContext = Android.App.Application.Context;
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(mContext);
+            string loginInfo = prefs.GetString(GlobalConstants.LOGIN_USER_INFORMATION, "");
+
+            LoginUser loginUser = JsonConvert.DeserializeObject<LoginUser>(loginInfo);
+
             Intent nextActivity;
-            if (loginUser.userWasLogged()) {
+            if ((loginUser != null) && loginUser.SuccessfulLogin) {
                 nextActivity = new Intent(this, typeof(WeatherActivity));
+                nextActivity.PutExtra(GlobalConstants.USER_SESSION, loginInfo);
             } else {
                 nextActivity = new Intent(this, typeof(LoginActivity));
             }

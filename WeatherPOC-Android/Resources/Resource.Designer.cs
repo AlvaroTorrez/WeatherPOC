@@ -60,6 +60,9 @@ namespace WeatherPOC_Android
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050005
+			public const int Logout = 2131034117;
+			
 			// aapt resource value: 0x7f050004
 			public const int imageView1 = 2131034116;
 			
@@ -93,6 +96,9 @@ namespace WeatherPOC_Android
 			
 			// aapt resource value: 0x7f030001
 			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Weather = 2130903042;
 			
 			static Layout()
 			{
