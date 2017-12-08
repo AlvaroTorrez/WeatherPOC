@@ -10,10 +10,17 @@ namespace WeatherPOC_ShareCode
     {
         public bool SuccessfulLogin  { set; get; }
         public string UserName { set; get; }
+        public string resultInfo { set; get; }
 
-        public LoginUser(String userName, String password) {
-            this.SuccessfulLogin = WebService.loginUserRequest(userName, password);
-            this.UserName = userName;
+        public LoginUser(string userName, string password) {
+            if (FieldsValidator.isValidEmail(userName)) {
+                this.SuccessfulLogin = WebService.loginUserRequest(userName, password);
+                this.resultInfo = "Loggin was successful";
+                this.UserName = userName;
+            } else {
+                this.resultInfo = "Invalid email";
+                this.SuccessfulLogin = false;
+            }
         }
     }
 }

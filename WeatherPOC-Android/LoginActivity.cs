@@ -47,14 +47,11 @@ namespace WeatherPOC_Android {
                 wheather.PutExtra(GlobalConstants.USER_SESSION, output);
                 StartActivity(wheather);
             } else {
-                Console.WriteLine("Error the user is wrong");
-
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
                 alert.SetTitle("Login Failed");
                 alert.SetMessage("The user or password are incorrect.");
                 alert.SetPositiveButton("OK", (senderAlert, args) => {});
                 //Toast.MakeText(this, "Deleted!", ToastLength.Short).Show();
-
                 Dialog dialog = alert.Create();
                 dialog.Show();
             }

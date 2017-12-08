@@ -18,7 +18,7 @@ namespace WeatherPOC_Android {
             SetContentView(Resource.Layout.Main);
 
             new Thread(new ThreadStart(() => {
-                Thread.Sleep(3 * 1000);
+                Thread.Sleep(2 * 1000);
                 this.RunOnUiThread(() => {
                     validateLogin();
                 });

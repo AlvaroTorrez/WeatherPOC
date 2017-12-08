@@ -21,7 +21,7 @@ namespace WeatherPOC_ShareCode {
         public static bool loginUserRequest(string userName, string password) {
             bool result = false;
             WebService wService = new WebService(LOGIN_SERVICE_URL);
-            if (userName == "admin") {
+            if (userName == "a@a.com") {
                 result = true;
             }
             return result;
