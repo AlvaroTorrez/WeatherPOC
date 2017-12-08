@@ -29,11 +29,11 @@ namespace WeatherPOC_Android {
             _userEmail = FindViewById<TextView>(Resource.Id.userEmail);
             _userPassword = FindViewById<TextView>(Resource.Id.userPassword);
 
-            _loginButton.Touch += ActionLoginTouch;
+            _loginButton.Click += ActionLoginTouch;
         }
 
-        private void ActionLoginTouch(object sender, View.TouchEventArgs e) {
-            
+        private void ActionLoginTouch(object sender, EventArgs e) {
+
             LoginUser loginUser = new LoginUser(_userEmail.Text, _userPassword.Text);
             if (loginUser.SuccessfulLogin) {
                 string output = JsonConvert.SerializeObject(loginUser);
@@ -48,6 +48,15 @@ namespace WeatherPOC_Android {
                 StartActivity(wheather);
             } else {
                 Console.WriteLine("Error the user is wrong");
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Login Failed");
+                alert.SetMessage("The user or password are incorrect.");
+                alert.SetPositiveButton("OK", (senderAlert, args) => {});
+                //Toast.MakeText(this, "Deleted!", ToastLength.Short).Show();
+
+                Dialog dialog = alert.Create();
+                dialog.Show();
             }
         }
     }
