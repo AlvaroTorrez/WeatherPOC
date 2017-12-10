@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using System;
 using WeatherPOC_ShareCode;
+using WeatherPOC_ShareCode.LoginModule;
 using Android.Content;
 using System.Threading;
 using Android.Preferences;

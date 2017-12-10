@@ -17,14 +17,5 @@ namespace WeatherPOC_ShareCode {
             bool co = CrossConnectivity.Current.IsConnected;
             System.Diagnostics.Debug.WriteLine(" ++++ IsConnected " + co);
         }
-
-        public static bool loginUserRequest(string userName, string password) {
-            bool result = false;
-            WebService wService = new WebService(LOGIN_SERVICE_URL);
-            if (userName == "a@a.com") {
-                result = true;
-            }
-            return result;
-        }
     }
 }

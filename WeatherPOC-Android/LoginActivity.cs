@@ -12,6 +12,7 @@ using Android.Widget;
 using WeatherPOC_ShareCode;
 using Android.Preferences;
 using Newtonsoft.Json;
+using WeatherPOC_ShareCode.LoginModule;
 
 namespace WeatherPOC_Android {
     [Activity(Label = "LoginActivity", Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
@@ -34,7 +35,8 @@ namespace WeatherPOC_Android {
 
         private void ActionLoginTouch(object sender, EventArgs e) {
 
-            LoginUser loginUser = new LoginUser(_userEmail.Text, _userPassword.Text);
+            LoginUser loginUser = new LoginUser(new MockLoginRequests());
+            loginUser.VerifyLoginUser(_userEmail.Text, _userPassword.Text);
             if (loginUser.SuccessfulLogin) {
                 string output = JsonConvert.SerializeObject(loginUser);
                 Context mContext = Android.App.Application.Context;
