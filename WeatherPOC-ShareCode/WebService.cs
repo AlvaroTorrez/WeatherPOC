@@ -10,7 +10,7 @@ namespace WeatherPOC_ShareCode {
     class WebService {
         private const string LOGIN_SERVICE_URL = "test";
 
-        public string data { set; get; }
+        public string Data { set; get; }
 
         
         private WebService(string endPoint) {

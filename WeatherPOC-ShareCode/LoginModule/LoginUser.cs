@@ -11,6 +11,7 @@ namespace WeatherPOC_ShareCode.LoginModule
         public bool SuccessfulLogin  { set; get; }
         public string UserName { set; get; }
         public string ResultInfo { set; get; }
+
         private ILoginRequests loginRequestService;
 
         public LoginUser() {
@@ -23,9 +24,13 @@ namespace WeatherPOC_ShareCode.LoginModule
 
         public bool VerifyLoginUser(string userName, string password) {
             if (FieldsValidator.isValidEmail(userName)) {
-                this.SuccessfulLogin = loginRequestService.ValidateLoginUser(userName, password);
-                this.ResultInfo = "Loggin was successful";
                 this.UserName = userName;
+                this.SuccessfulLogin = loginRequestService.ValidateLoginUser(userName, password);
+                if (this.SuccessfulLogin) {
+                    this.ResultInfo = "Loggin was successful";
+                } else {
+                    this.ResultInfo = "An error was heppening, login faild";
+                }
             } else {
                 this.ResultInfo = "Invalid email";
                 this.SuccessfulLogin = false;
