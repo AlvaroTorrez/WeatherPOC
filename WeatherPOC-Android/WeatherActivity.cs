@@ -19,6 +19,7 @@ namespace WeatherPOC_Android
     public class WeatherActivity : Activity
     {
         private Button _Logout;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

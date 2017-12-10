@@ -39,8 +39,12 @@
   <ItemGroup>
     <Compile Include="FieldsValidator.cs" />
     <Compile Include="GlobalConstants.cs" />
-    <Compile Include="LoginUser.cs" />
+    <Compile Include="LoginModule\ILoginRequests.cs" />
+    <Compile Include="LoginModule\LoginRequests.cs" />
+    <Compile Include="LoginModule\LoginUser.cs" />
+    <Compile Include="LoginModule\MockLoginRequests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest\TestFieldsValidator.cs" />
     <Compile Include="UnitTest\TestLoginUser.cs" />
     <Compile Include="WebService.cs" />
   </ItemGroup>

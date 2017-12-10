@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using System;
 using WeatherPOC_ShareCode;
+using WeatherPOC_ShareCode.LoginModule;
 using Android.Content;
 using System.Threading;
 using Android.Preferences;
@@ -18,7 +19,7 @@ namespace WeatherPOC_Android {
             SetContentView(Resource.Layout.Main);
 
             new Thread(new ThreadStart(() => {
-                Thread.Sleep(3 * 1000);
+                Thread.Sleep(2 * 1000);
                 this.RunOnUiThread(() => {
                     validateLogin();
                 });
