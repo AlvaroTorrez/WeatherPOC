@@ -19,6 +19,7 @@ namespace WeatherPOC_Android
     public class WeatherActivity : Activity
     {
         private Button _Logout;
+        private TextView _TempJson;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,9 +31,19 @@ namespace WeatherPOC_Android
             SetContentView(Resource.Layout.Weather);
 
             _Logout = FindViewById<Button>(Resource.Id.Logout);
+            _TempJson = FindViewById<TextView>(Resource.Id.tempJson);
 
             _Logout.Click += logountAction;
+            Console.WriteLine(" WebService info A------- ");
+            WebService info = WebService.GetRequest("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places%20where%20text%3D%22cochabamba%22)%20and%20u%3D%22c%22&format=json").Result;
+            Console.WriteLine(" WebService info B------- ");
+            _TempJson.Text = info.Data;
             // Create your application here
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
         }
 
         private void logountAction(object sender, EventArgs e) {

@@ -72,6 +72,9 @@ namespace WeatherPOC_Android
 			// aapt resource value: 0x7f050000
 			public const int logoImage = 2131034112;
 			
+			// aapt resource value: 0x7f050006
+			public const int tempJson = 2131034118;
+			
 			// aapt resource value: 0x7f050001
 			public const int userEmail = 2131034113;
 			
