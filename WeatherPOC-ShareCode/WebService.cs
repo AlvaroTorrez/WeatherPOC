@@ -14,6 +14,7 @@ namespace WeatherPOC_ShareCode {
 
         public bool Successful { get; private set; }
         public string Data { get; private set; }
+        public string ErrorMessage { get; private set; }
 
         private string EndPoint;
 
@@ -31,8 +32,7 @@ namespace WeatherPOC_ShareCode {
             bool isConnected = CrossConnectivity.Current.IsConnected;
             if (isConnected) {
                 // do the conection
-                try
-                {
+                try {
                     HttpClient client = new HttpClient();
                     HttpResponseMessage result = await client.GetAsync(url).ConfigureAwait(false);
                     if (result.StatusCode.Equals(HttpStatusCode.OK))
@@ -40,14 +40,14 @@ namespace WeatherPOC_ShareCode {
                         info.Successful = true;
                         info.Data = await result.Content.ReadAsStringAsync();
                     }
-                }
-                catch (Exception e) {
-
+                } catch (Exception e) {
+                    info.Successful = false;
+                    info.ErrorMessage = "Exception hapening to performas request: " + e.Message;
                 }
                 
             } else {
                 info.Successful = false;
-                info.FillInfoConnectionFaild();
+                info.ErrorMessage = "The connection is not available";
             }
             return info;
         }

@@ -7,5 +7,7 @@ using System.Threading.Tasks;
 namespace WeatherPOC_ShareCode.WeatherModule
 {
     public interface IWeatherRequests {
+        WeatherListData GetListDepartamentShortInfo();
+        WeatherData GetAllInfoOneCity(string cityName, string country);
     }
 }

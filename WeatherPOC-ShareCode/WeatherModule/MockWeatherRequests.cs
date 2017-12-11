@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace WeatherPOC_ShareCode.WeatherModule
 {
-    public class MockWeatherRequests : IWeatherRequests {
+    public class MockWeatherRequests : IWeatherRequests
+    {
+        public WeatherData GetAllInfoOneCity(string cityName, string country)
+        {
+            throw new NotImplementedException();
+        }
+
+        public WeatherListData GetListDepartamentShortInfo()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

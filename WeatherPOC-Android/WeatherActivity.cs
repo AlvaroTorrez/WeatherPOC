@@ -12,6 +12,8 @@ using Android.Widget;
 using Android.Preferences;
 
 using WeatherPOC_ShareCode;
+using Newtonsoft.Json;
+using WeatherPOC_ShareCode.WeatherModule;
 
 namespace WeatherPOC_Android
 {
@@ -34,10 +36,9 @@ namespace WeatherPOC_Android
             _TempJson = FindViewById<TextView>(Resource.Id.tempJson);
 
             _Logout.Click += logountAction;
-            Console.WriteLine(" WebService info A------- ");
-            WebService info = WebService.GetRequest("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places%20where%20text%3D%22cochabamba%22)%20and%20u%3D%22c%22&format=json").Result;
-            Console.WriteLine(" WebService info B------- ");
-            _TempJson.Text = info.Data;
+            WeatherRequests request = new WeatherRequests();
+            WeatherListData listW = request.GetListDepartamentShortInfo();
+            WeatherData oneW = request.GetAllInfoOneCity("Cochabamba", "Bolivia");
             // Create your application here
         }
 
