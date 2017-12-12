@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace WeatherPOC_Android
 {
-    [Activity(Label = "WeatherPOC_Android", MainLauncher = true, Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
+    [Activity(Label = "WeatherPOC_Android", MainLauncher = true, Theme = "@android:style/Theme.DeviceDefault.NoActionBar", NoHistory = true)]
     public class MainActivity : Activity
     {
 
