@@ -60,26 +60,41 @@ namespace WeatherPOC_Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050005
-			public const int Logout = 2131034117;
+			// aapt resource value: 0x7f080007
+			public const int Image = 2131230727;
 			
-			// aapt resource value: 0x7f050004
-			public const int imageView1 = 2131034116;
+			// aapt resource value: 0x7f080006
+			public const int ListDepartaments = 2131230726;
 			
-			// aapt resource value: 0x7f050003
-			public const int loginButton = 2131034115;
+			// aapt resource value: 0x7f080008
+			public const int Text = 2131230728;
 			
-			// aapt resource value: 0x7f050000
-			public const int logoImage = 2131034112;
+			// aapt resource value: 0x7f080009
+			public const int Text1 = 2131230729;
 			
-			// aapt resource value: 0x7f050006
-			public const int tempJson = 2131034118;
+			// aapt resource value: 0x7f08000a
+			public const int Text2 = 2131230730;
 			
-			// aapt resource value: 0x7f050001
-			public const int userEmail = 2131034113;
+			// aapt resource value: 0x7f080004
+			public const int imageView1 = 2131230724;
 			
-			// aapt resource value: 0x7f050002
-			public const int userPassword = 2131034114;
+			// aapt resource value: 0x7f080003
+			public const int loginButton = 2131230723;
+			
+			// aapt resource value: 0x7f080000
+			public const int logoImage = 2131230720;
+			
+			// aapt resource value: 0x7f08000b
+			public const int menu_edit = 2131230731;
+			
+			// aapt resource value: 0x7f080005
+			public const int toolbar = 2131230725;
+			
+			// aapt resource value: 0x7f080001
+			public const int userEmail = 2131230721;
+			
+			// aapt resource value: 0x7f080002
+			public const int userPassword = 2131230722;
 			
 			static Id()
 			{
@@ -94,14 +109,23 @@ namespace WeatherPOC_Android
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int Login = 2130903040;
+			// aapt resource value: 0x7f040000
+			public const int list_item = 2130968576;
 			
-			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			// aapt resource value: 0x7f040001
+			public const int Login = 2130968577;
 			
-			// aapt resource value: 0x7f030002
-			public const int Weather = 2130903042;
+			// aapt resource value: 0x7f040002
+			public const int Main = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int toolbar = 2130968579;
+			
+			// aapt resource value: 0x7f040004
+			public const int Weather = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int WeatherItem = 2130968581;
 			
 			static Layout()
 			{
@@ -113,11 +137,58 @@ namespace WeatherPOC_Android
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int topMenus = 2131165184;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
+		public partial class Mipmap
+		{
+			
+			// aapt resource value: 0x7f030000
+			public const int ic_action_content_create = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int ic_action_content_save = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int ic_menu_copy_holo_dark = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int ic_menu_cut_holo_dark = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int ic_menu_paste_holo_dark = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int ic_menu_search_holo_dark = 2130903045;
+			
+			static Mipmap()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Mipmap()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int app_name = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int app_name = 2131034112;
 			
 			static String()
 			{
@@ -125,6 +196,22 @@ namespace WeatherPOC_Android
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int MyTheme = 2131099648;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
