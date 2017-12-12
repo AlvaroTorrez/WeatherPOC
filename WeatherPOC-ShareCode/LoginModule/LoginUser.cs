@@ -5,33 +5,42 @@ using System.Text;
 
 namespace WeatherPOC_ShareCode.LoginModule
 {
-    
+
     public class LoginUser
     {
-        public bool SuccessfulLogin  { set; get; }
+        public bool SuccessfulLogin { set; get; }
         public string UserName { set; get; }
         public string ResultInfo { set; get; }
 
         private ILoginRequests loginRequestService;
 
-        public LoginUser() {
+        public LoginUser()
+        {
             this.loginRequestService = new LoginRequests();
         }
 
-        public LoginUser(ILoginRequests loginRequestService) {
+        public LoginUser(ILoginRequests loginRequestService)
+        {
             this.loginRequestService = loginRequestService;
         }
 
-        public bool VerifyLoginUser(string userName, string password) {
-            if (FieldsValidator.isValidEmail(userName)) {
+        public bool VerifyLoginUser(string userName, string password)
+        {
+            if (FieldsValidator.IsValidEmail(userName))
+            {
                 this.UserName = userName;
                 this.SuccessfulLogin = loginRequestService.ValidateLoginUser(userName, password);
-                if (this.SuccessfulLogin) {
+                if (this.SuccessfulLogin)
+                {
                     this.ResultInfo = "Loggin was successful";
-                } else {
+                }
+                else
+                {
                     this.ResultInfo = "An error was heppening, login faild";
                 }
-            } else {
+            }
+            else
+            {
                 this.ResultInfo = "Invalid email";
                 this.SuccessfulLogin = false;
             }

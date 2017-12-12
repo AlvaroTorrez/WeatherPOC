@@ -12,6 +12,8 @@ using Android.Widget;
 using Android.Preferences;
 
 using WeatherPOC_ShareCode;
+using Newtonsoft.Json;
+using WeatherPOC_ShareCode.WeatherModule;
 
 namespace WeatherPOC_Android
 {
@@ -19,6 +21,7 @@ namespace WeatherPOC_Android
     public class WeatherActivity : Activity
     {
         private Button _Logout;
+        private TextView _TempJson;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,12 +33,22 @@ namespace WeatherPOC_Android
             SetContentView(Resource.Layout.Weather);
 
             _Logout = FindViewById<Button>(Resource.Id.Logout);
+            _TempJson = FindViewById<TextView>(Resource.Id.tempJson);
 
-            _Logout.Click += logountAction;
+            _Logout.Click += LogountAction;
+            WeatherRequests request = new WeatherRequests();
+            List<WeatherData> listW = request.GetListDepartamentShortInfo();
+            WeatherData oneW = request.GetAllInfoOneCity("Cochabamba", "Bolivia");
             // Create your application here
         }
 
-        private void logountAction(object sender, EventArgs e) {
+        protected override void OnResume()
+        {
+            base.OnResume();
+        }
+
+        private void LogountAction(object sender, EventArgs e)
+        {
             Context mContext = Android.App.Application.Context;
             ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(mContext);
             ISharedPreferencesEditor editor = prefs.Edit();

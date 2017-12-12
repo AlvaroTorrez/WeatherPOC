@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest\TestFieldsValidator.cs" />
     <Compile Include="UnitTest\TestLoginUser.cs" />
+    <Compile Include="WeatherModule\IWeatherRequests.cs" />
+    <Compile Include="WeatherModule\MockWeatherRequests.cs" />
+    <Compile Include="WeatherModule\WeatherData.cs" />
+    <Compile Include="WeatherModule\WeatherRequests.cs" />
     <Compile Include="WebService.cs" />
   </ItemGroup>
   <ItemGroup>
