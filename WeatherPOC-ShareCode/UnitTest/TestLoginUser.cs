@@ -12,9 +12,10 @@ namespace WeatherPOC_ShareCode.UnitTest
     class TestLoginUser
     {
         [Test]
-        public void VerifyLoginUserTrue() {
+        public void VerifyLoginUserTrue()
+        {
             LoginUser login = new LoginUser(new MockLoginRequests());
-            bool expectedResult  = login.VerifyLoginUser("a@a.com", "a");
+            bool expectedResult = login.VerifyLoginUser("a@a.com", "a");
             Assert.AreEqual(expectedResult, true);
         }
 

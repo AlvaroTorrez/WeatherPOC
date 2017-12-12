@@ -9,8 +9,10 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeatherPOC_ShareCode {
-    public class WebService {
+namespace WeatherPOC_ShareCode
+{
+    public class WebService
+    {
 
         public bool Successful { get; private set; }
         public string Data { get; private set; }
@@ -19,20 +21,20 @@ namespace WeatherPOC_ShareCode {
         private string EndPoint;
 
 
-        private WebService(string endPoint) {
+        private WebService(string endPoint)
+        {
             this.EndPoint = endPoint;
         }
 
-        private void FillInfoConnectionFaild() {
-            throw new NotImplementedException();
-        }
-
-        public static async Task<WebService> GetRequest(string url) {
+        public static async Task<WebService> GetRequest(string url)
+        {
             WebService info = new WebService(url);
             bool isConnected = CrossConnectivity.Current.IsConnected;
-            if (isConnected) {
+            if (isConnected)
+            {
                 // do the conection
-                try {
+                try
+                {
                     HttpClient client = new HttpClient();
                     HttpResponseMessage result = await client.GetAsync(url).ConfigureAwait(false);
                     if (result.StatusCode.Equals(HttpStatusCode.OK))
@@ -40,12 +42,16 @@ namespace WeatherPOC_ShareCode {
                         info.Successful = true;
                         info.Data = await result.Content.ReadAsStringAsync();
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     info.Successful = false;
                     info.ErrorMessage = "Exception hapening to performas request: " + e.Message;
                 }
-                
-            } else {
+
+            }
+            else
+            {
                 info.Successful = false;
                 info.ErrorMessage = "The connection is not available";
             }

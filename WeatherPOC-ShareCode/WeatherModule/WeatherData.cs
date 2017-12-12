@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherPOC_ShareCode.WeatherModule
 {
-    public class WeatherData
+    public class MainWeatherData
     {
         public QueryData Query { get; set; }
 
@@ -21,10 +21,10 @@ namespace WeatherPOC_ShareCode.WeatherModule
 
     public class ResultData
     {
-        public ChannelData Channel { get; set; }
+        public WeatherData Channel { get; set; }
     }
 
-    public class WeatherListData
+    public class MainWeatherListData
     {
         public QueryListData Query { get; set; }
 
@@ -39,10 +39,10 @@ namespace WeatherPOC_ShareCode.WeatherModule
 
     public class ResultListData
     {
-        public List<ChannelData> Channel { get; set; }
+        public List<WeatherData> Channel { get; set; }
     }
 
-    public class ChannelData
+    public class WeatherData
     {
         public string Title { get; set; }
         public UnitsData Units { get; set; }

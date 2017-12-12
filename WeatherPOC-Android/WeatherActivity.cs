@@ -35,9 +35,9 @@ namespace WeatherPOC_Android
             _Logout = FindViewById<Button>(Resource.Id.Logout);
             _TempJson = FindViewById<TextView>(Resource.Id.tempJson);
 
-            _Logout.Click += logountAction;
+            _Logout.Click += LogountAction;
             WeatherRequests request = new WeatherRequests();
-            WeatherListData listW = request.GetListDepartamentShortInfo();
+            List<WeatherData> listW = request.GetListDepartamentShortInfo();
             WeatherData oneW = request.GetAllInfoOneCity("Cochabamba", "Bolivia");
             // Create your application here
         }
@@ -47,7 +47,8 @@ namespace WeatherPOC_Android
             base.OnResume();
         }
 
-        private void logountAction(object sender, EventArgs e) {
+        private void LogountAction(object sender, EventArgs e)
+        {
             Context mContext = Android.App.Application.Context;
             ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(mContext);
             ISharedPreferencesEditor editor = prefs.Edit();

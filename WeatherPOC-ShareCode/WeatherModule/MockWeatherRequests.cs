@@ -13,7 +13,7 @@ namespace WeatherPOC_ShareCode.WeatherModule
             throw new NotImplementedException();
         }
 
-        public WeatherListData GetListDepartamentShortInfo()
+        public List<WeatherData> GetListDepartamentShortInfo()
         {
             throw new NotImplementedException();
         }

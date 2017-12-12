@@ -17,14 +17,14 @@ namespace WeatherPOC_ShareCode.WeatherModule
             new City("Oruro", "Bolivia")
         };
 
-        public WeatherListData GetListDepartamentShortInfo()
+        public List<WeatherData> GetListDepartamentShortInfo()
         {
-            WeatherListData result = null;
+            List<WeatherData> result = new List<WeatherData>();
             string queryWeather = GetQueryEscape("units, location, item.condition", listDepartament);
             WebService info = WebService.GetRequest(URL_GET_WHEATHER + queryWeather).Result;
             if (info.Successful)
             {
-                result = JsonConvert.DeserializeObject<WeatherListData>(info.Data);
+                result = JsonConvert.DeserializeObject<MainWeatherListData>(info.Data).Query.Results.Channel;
             }
             return result;
         }
@@ -36,7 +36,7 @@ namespace WeatherPOC_ShareCode.WeatherModule
             WebService info = WebService.GetRequest(URL_GET_WHEATHER + queryWeather).Result;
             if (info.Successful)
             {
-                result = JsonConvert.DeserializeObject<WeatherData>(info.Data);
+                result = JsonConvert.DeserializeObject<MainWeatherData>(info.Data).Query.Results.Channel;
             }
             return result;
         }

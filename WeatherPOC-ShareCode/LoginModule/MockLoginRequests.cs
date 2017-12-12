@@ -15,8 +15,10 @@ namespace WeatherPOC_ShareCode.LoginModule
         public bool ValidateLoginUser(string userName, string password)
         {
             bool result = false;
-            if (userToPassword.ContainsKey(userName)) {
-                if (userToPassword[userName] == password) {
+            if (userToPassword.ContainsKey(userName))
+            {
+                if (userToPassword[userName] == password)
+                {
                     result = true;
                 }
             }
