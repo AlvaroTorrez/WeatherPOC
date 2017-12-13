@@ -14,49 +14,98 @@ using Android.Preferences;
 using WeatherPOC_ShareCode;
 using Newtonsoft.Json;
 using WeatherPOC_ShareCode.WeatherModule;
+using WeatherPOC_ShareCode.LoginModule;
+using System.Threading.Tasks;
 
 namespace WeatherPOC_Android
 {
     [Activity(Label = "WeatherActivity", Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
     public class WeatherActivity : Activity
     {
-        private List<WeatherData> ListOfDepartamens;
+        private List<WeatherData> listOfDepartamens;
+        private LoginUser loginUser;
+
+        private ProgressDialog _progress;
+        private ListView _listDepartaments;
+        private Toolbar _toolbar;
+        private WeatherItem adapter;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            string test = Intent.GetStringExtra(GlobalConstants.USER_SESSION);
-            Console.WriteLine(" Recover info ------- " + test);
+            loginUser = JsonConvert.DeserializeObject<LoginUser>(Intent.GetStringExtra(GlobalConstants.USER_SESSION));
 
             SetContentView(Resource.Layout.Weather);
+            _toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            _listDepartaments = FindViewById<ListView>(Resource.Id.ListDepartaments);
 
-            WeatherRequests request = new WeatherRequests();
-            ListOfDepartamens = request.GetListDepartamentShortInfo();
-            //WeatherData oneW = request.GetAllInfoOneCity("Cochabamba", "Bolivia");
-            // Create your application here
-            ListView _listDepartaments = FindViewById<ListView>(Resource.Id.ListDepartaments);
-            _listDepartaments.Adapter = new WeatherItem(this, ListOfDepartamens);
+            _progress = new ProgressDialog(this)
+            {
+                Indeterminate = true
+            };
+            _progress.SetProgressStyle(ProgressDialogStyle.Spinner);
+            _progress.SetMessage("Loading... Please wait...");
+            _progress.SetCancelable(false);
+            _progress.Show();
 
+            listOfDepartamens = new List<WeatherData>();
+            adapter = new WeatherItem(this, listOfDepartamens);
+            _listDepartaments.Adapter = adapter;
             _listDepartaments.TextFilterEnabled = true;
-
             _listDepartaments.ItemClick += SelectedItem;
 
-            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetActionBar(toolbar);
+            Task.Run(() => LoadingDepartmentData());
+
+            SetActionBar(_toolbar);
             ActionBar.Title = "Bolivia Weather";
+        }
+
+        private void LoadingDepartmentData()
+        {
+            
+            WeatherRequests request = new WeatherRequests();
+            listOfDepartamens = request.GetListDepartamentShortInfo();
+            //WeatherData oneW = request.GetAllInfoOneCity("Cochabamba", "Bolivia");
+            // Create your application here
+            RunOnUiThread(() => {
+                adapter.Items = listOfDepartamens;
+                adapter.NotifyDataSetChanged();
+                _progress.Dismiss();
+            });
+            Task.Delay(1000);
         }
 
         private void SelectedItem(object sender, AdapterView.ItemClickEventArgs e)
         {
             var listView = sender as ListView;
-            var t = ListOfDepartamens[e.Position];
+            var t = listOfDepartamens[e.Position];
             Android.Widget.Toast.MakeText(this, t.Location.City, Android.Widget.ToastLength.Short).Show();
             Console.WriteLine("Clicked on " + t.Location.City);
         }
 
-        protected override void OnResume()
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            base.OnResume();
+            MenuInflater.Inflate(Resource.Menu.topMenus, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (item.TitleFormatted.ToString() == "Sign out")
+            {
+                Toast.MakeText(this, item.TitleFormatted, ToastLength.Short).Show();
+                LogountAction();
+            }
+            else if (item.TitleFormatted.ToString() == "Reload")
+            {
+                RunOnUiThread(() => {
+                    _progress.Show();
+                });
+                Task.Run(() => LoadingDepartmentData());
+            }
+            
+            return base.OnOptionsItemSelected(item);
         }
 
         private void LogountAction()
@@ -68,23 +117,6 @@ namespace WeatherPOC_Android
             editor.Apply();
             var mainActivity = new Intent(this, typeof(MainActivity));
             StartActivity(mainActivity);
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.topMenus, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            if (item.TitleFormatted.ToString() == "Loginout")
-            {
-                Toast.MakeText(this, item.TitleFormatted, ToastLength.Short).Show();
-                LogountAction();
-            }
-            
-            return base.OnOptionsItemSelected(item);
         }
     }
 }

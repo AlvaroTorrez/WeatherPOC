@@ -42,7 +42,7 @@
         android:textColorHint="#a2a2a2"
         android:textColor="#222831" />
     <TextView
-        android:text="Login"
+        android:text="Sign in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/loginButton"

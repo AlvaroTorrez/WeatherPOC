@@ -17,12 +17,12 @@ namespace WeatherPOC_Android
 {
     class WeatherItem : BaseAdapter<WeatherData>
     {
-        List<WeatherData> items;
+        public List<WeatherData> Items { get; set; }
         Activity context;
         public WeatherItem(Activity context, List<WeatherData> items) : base()
         {
             this.context = context;
-            this.items = items;
+            this.Items = items;
         }
 
         public override long GetItemId(int position)
@@ -31,25 +31,24 @@ namespace WeatherPOC_Android
         }
         public override WeatherData this[int position]
         {
-            get { return items[position]; }
+            get { return Items[position]; }
         }
 
         public override int Count
         {
-            get { return items.Count; }
+            get { return Items.Count; }
         }
+
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var item = items[position];
+            var item = Items[position];
             View view = convertView;
             if (view == null) // no view to re-use, create new
                 view = context.LayoutInflater.Inflate(Resource.Layout.WeatherItem, null);
             view.FindViewById<TextView>(Resource.Id.DepartName).Text = item.Location.City;
-            view.FindViewById<TextView>(Resource.Id.Temperature).Text = item.Item.Condition.Temp;
+            view.FindViewById<TextView>(Resource.Id.Temperature).Text = item.Item.Condition.Temp + "º" + item.Units.Temperature;
             var imageBitmap = GetImageBitmapFromUrl("http://l.yimg.com/a/i/us/we/52/" + item.Item.Condition.Code + ".gif");
             view.FindViewById<ImageView>(Resource.Id.WeatherIcon).SetImageBitmap(imageBitmap);
-
-
             return view;
         }
 

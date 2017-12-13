@@ -2,7 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item
        android:id="@+id/menu_edit"
-       icon="@mipmap/ic_action_content_create"
-       showAsAction="ifRoom"
-       android:title="Loginout" />
+       android:icon="@mipmap/menu_refresh_list_icon"
+       android:showAsAction="ifRoom"
+       android:title="Reload" />
+  <item
+       android:id="@+id/menu_edit"
+       android:showAsAction="never"
+       android:title="Sign out" />
+  <item
+       android:id="@+id/menu_edit"
+       android:showAsAction="never"
+       android:title="About" />
 </menu>
