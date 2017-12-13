@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
+    android:background="#EEEEEE"
     android:minWidth="25px"
     android:minHeight="25px">
     <ImageView
@@ -24,7 +24,10 @@
         android:layout_marginBottom="2dp"
         android:layout_marginEnd="70dp"
         android:layout_marginStart="70dp"
-        android:hint="User Email" />
+        android:hint="User Email"
+        android:textColorHint="#a2a2a2"
+        android:backgroundTint="#ffa2a2a2"
+        android:textColor="#222831" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
@@ -34,13 +37,16 @@
         android:layout_marginStart="70dp"
         android:layout_marginBottom="2dp"
         android:layout_marginTop="2dp"
-        android:hint="Password" />
+        android:hint="Password"
+        android:backgroundTint="#ffa2a2a2"
+        android:textColorHint="#a2a2a2"
+        android:textColor="#222831" />
     <TextView
-        android:text="Login"
+        android:text="Sign in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/loginButton"
-        android:textColor="@android:color/black"
+        android:textColor="#222831"
         android:textSize="24dp"
         android:textStyle="normal"
         android:textAlignment="center"

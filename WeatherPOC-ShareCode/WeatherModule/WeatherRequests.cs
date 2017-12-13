@@ -14,7 +14,14 @@ namespace WeatherPOC_ShareCode.WeatherModule
         private List<City> listDepartament = new List<City>
         {
             new City("Cochabamba", "Bolivia"),
-            new City("Oruro", "Bolivia")
+            new City("La Paz", "Bolivia"),
+            new City("Oruro", "Bolivia"),
+            new City("Potosi", "Bolivia"),
+            new City("Sucre", "Bolivia"),
+            new City("Tarija", "Bolivia"),
+            new City("Santa Cruz de la sierra", "Bolivia"),
+            new City("Trinidad", "Bolivia"),
+            new City("Cobija", "Bolivia"),
         };
 
         public List<WeatherData> GetListDepartamentShortInfo()
