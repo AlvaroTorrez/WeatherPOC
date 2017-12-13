@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -42,10 +44,29 @@ namespace WeatherPOC_Android
             View view = convertView;
             if (view == null) // no view to re-use, create new
                 view = context.LayoutInflater.Inflate(Resource.Layout.WeatherItem, null);
-            view.FindViewById<TextView>(Resource.Id.Text1).Text = "AAA";
-            view.FindViewById<TextView>(Resource.Id.Text2).Text = "BBB";
-            //view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(item.ImageResourceId);
+            view.FindViewById<TextView>(Resource.Id.DepartName).Text = item.Location.City;
+            view.FindViewById<TextView>(Resource.Id.Temperature).Text = item.Item.Condition.Temp;
+            var imageBitmap = GetImageBitmapFromUrl("http://l.yimg.com/a/i/us/we/52/" + item.Item.Condition.Code + ".gif");
+            view.FindViewById<ImageView>(Resource.Id.WeatherIcon).SetImageBitmap(imageBitmap);
+
+
             return view;
+        }
+
+        private Bitmap GetImageBitmapFromUrl(string url)
+        {
+            Bitmap imageBitmap = null;
+
+            using (var webClient = new WebClient())
+            {
+                var imageBytes = webClient.DownloadData(url);
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+
+            return imageBitmap;
         }
     }
 }

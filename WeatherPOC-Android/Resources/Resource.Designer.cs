@@ -60,20 +60,23 @@ namespace WeatherPOC_Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080007
-			public const int Image = 2131230727;
+			// aapt resource value: 0x7f080008
+			public const int ContenInfoW = 2131230728;
+			
+			// aapt resource value: 0x7f08000a
+			public const int DepartName = 2131230730;
+			
+			// aapt resource value: 0x7f080009
+			public const int Image = 2131230729;
 			
 			// aapt resource value: 0x7f080006
 			public const int ListDepartaments = 2131230726;
 			
-			// aapt resource value: 0x7f080008
-			public const int Text = 2131230728;
+			// aapt resource value: 0x7f08000b
+			public const int Temperature = 2131230731;
 			
-			// aapt resource value: 0x7f080009
-			public const int Text1 = 2131230729;
-			
-			// aapt resource value: 0x7f08000a
-			public const int Text2 = 2131230730;
+			// aapt resource value: 0x7f080007
+			public const int WeatherIcon = 2131230727;
 			
 			// aapt resource value: 0x7f080004
 			public const int imageView1 = 2131230724;
@@ -84,8 +87,8 @@ namespace WeatherPOC_Android
 			// aapt resource value: 0x7f080000
 			public const int logoImage = 2131230720;
 			
-			// aapt resource value: 0x7f08000b
-			public const int menu_edit = 2131230731;
+			// aapt resource value: 0x7f08000c
+			public const int menu_edit = 2131230732;
 			
 			// aapt resource value: 0x7f080005
 			public const int toolbar = 2131230725;
