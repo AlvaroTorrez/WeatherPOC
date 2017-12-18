@@ -76,11 +76,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="207" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170" y="35"/>
+            <point key="canvasLocation" x="-174" y="-505"/>
         </scene>
         <scene sceneID="3523">
             <objects>
-                <viewController id="3524" sceneMemberID="viewController">
+                <viewController id="3524" sceneMemberID="viewController" customClass="WeatherListViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3521"/>
                         <viewControllerLayoutGuide type="bottom" id="3522"/>
@@ -90,11 +90,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem id="3994" key="navigationItem" title="Weather Bolivia"/>
+                    <navigationItem id="3994" key="navigationItem" title="Weather Bolivia">
+                        <rightBarButtonItems>
+                            <barButtonItem id="4753" title="Sign out">
+                                <connections>
+                                    <segue id="6227" destination="205" kind="modal" identifier="GoLogin"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem id="4995" systemItem="refresh" width="0"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Signout" destination="4753" id="name-outlet-4753"/>
+                        <outlet property="Refresh" destination="4995" id="name-outlet-4995"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3526" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="36"/>
+            <point key="canvasLocation" x="893" y="339"/>
         </scene>
         <scene sceneID="3919">
             <objects>
@@ -109,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3923" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="29"/>
+            <point key="canvasLocation" x="337" y="-514"/>
         </scene>
     </scenes>
     <resources>

@@ -96,6 +96,10 @@
     <Compile Include="Login\LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="WeatherList\WeatherListViewController.cs" />
+    <Compile Include="WeatherList\WeatherListViewController.designer.cs">
+      <DependentUpon>WeatherListViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -121,6 +125,7 @@
   <ItemGroup>
     <Folder Include="Login\" />
     <Folder Include="Resources\Images\" />
+    <Folder Include="WeatherList\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\logo.png" />

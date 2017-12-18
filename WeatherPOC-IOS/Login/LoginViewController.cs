@@ -1,29 +1,49 @@
 ﻿using System;
-
+using Foundation;
+using Newtonsoft.Json;
 using UIKit;
+using WeatherPOC_ShareCode;
 using WeatherPOC_ShareCode.LoginModule;
 
 namespace WeatherPOC_IOS.Login
 {
     public partial class LoginViewController : UIViewController
     {
+        private LoginUser loginUser;
+
         public LoginViewController(IntPtr handle) : base(handle)
         {
+
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             SignIn.TouchUpInside += SignIn_TouchButton;
-            // Perform any additional setup after loading the view, typically from a nib.
+        }
+
+        public override void ViewDidAppear(bool animated) {
+            string jsonLogin = NSUserDefaults.StandardUserDefaults.StringForKey(GlobalConstants.LOGIN_USER_INFORMATION);
+            if (!String.IsNullOrEmpty(jsonLogin)) 
+            {
+                loginUser = JsonConvert.DeserializeObject<LoginUser>(jsonLogin);
+                if (loginUser != null && loginUser.SuccessfulLogin)
+                {
+                    PerformSegue("GoWeatherView", this);
+                }    
+            }
         }
 
         private void SignIn_TouchButton(object sender, EventArgs ea)
         {
-            LoginUser loginUser = new LoginUser(new MockLoginRequests());
+            loginUser = new LoginUser(new MockLoginRequests());
             loginUser.VerifyLoginUser(UserName.Text, Password.Text);
+
             if (loginUser.SuccessfulLogin) 
             {
+                string output = JsonConvert.SerializeObject(loginUser);
+                NSUserDefaults.StandardUserDefaults.SetString(output, GlobalConstants.LOGIN_USER_INFORMATION);
+
                 PerformSegue("GoWeatherView", this);
             }
             else 
