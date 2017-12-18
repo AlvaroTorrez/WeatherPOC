@@ -81,7 +81,9 @@ namespace WeatherPOC_Android
             var listView = sender as ListView;
             var t = listOfDepartamens[e.Position];
             Android.Widget.Toast.MakeText(this, t.Location.City, Android.Widget.ToastLength.Short).Show();
-            Console.WriteLine("Clicked on " + t.Location.City);
+            var wheatherDetail = new Intent(this, typeof(WeatherDetail));
+            wheatherDetail.PutExtra(GlobalConstants.DEPARTMENT_NAME, t.Location.City + ", " + t.Location.Country);
+            StartActivity(wheatherDetail);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

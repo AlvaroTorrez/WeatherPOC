@@ -60,26 +60,83 @@ namespace WeatherPOC_Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080008
-			public const int ContenInfoW = 2131230728;
+			// aapt resource value: 0x7f080016
+			public const int AtmosHumidity = 2131230742;
 			
-			// aapt resource value: 0x7f08000a
-			public const int DepartName = 2131230730;
+			// aapt resource value: 0x7f080018
+			public const int AtmosPressure = 2131230744;
 			
-			// aapt resource value: 0x7f080009
-			public const int Image = 2131230729;
+			// aapt resource value: 0x7f08001a
+			public const int AtmosVisibility = 2131230746;
+			
+			// aapt resource value: 0x7f08001c
+			public const int ContenInfoW = 2131230748;
+			
+			// aapt resource value: 0x7f08001e
+			public const int DepartName = 2131230750;
+			
+			// aapt resource value: 0x7f08001d
+			public const int Image = 2131230749;
+			
+			// aapt resource value: 0x7f08000c
+			public const int ImagenWeather = 2131230732;
+			
+			// aapt resource value: 0x7f080015
+			public const int LabelAtmosHumidity = 2131230741;
+			
+			// aapt resource value: 0x7f080017
+			public const int LabelAtmosPressure = 2131230743;
+			
+			// aapt resource value: 0x7f080019
+			public const int LabelAtmosVisibility = 2131230745;
+			
+			// aapt resource value: 0x7f080014
+			public const int LabelAtmosphere = 2131230740;
+			
+			// aapt resource value: 0x7f08000d
+			public const int LabelWind = 2131230733;
+			
+			// aapt resource value: 0x7f08000f
+			public const int LabelWindDirection = 2131230735;
+			
+			// aapt resource value: 0x7f080012
+			public const int LabelWindSpeed = 2131230738;
 			
 			// aapt resource value: 0x7f080006
 			public const int ListDepartaments = 2131230726;
 			
-			// aapt resource value: 0x7f08000b
-			public const int Temperature = 2131230731;
+			// aapt resource value: 0x7f08000a
+			public const int Temperature = 2131230730;
 			
 			// aapt resource value: 0x7f080007
-			public const int WeatherIcon = 2131230727;
+			public const int TitleDepartment = 2131230727;
+			
+			// aapt resource value: 0x7f08001b
+			public const int WeatherIcon = 2131230747;
+			
+			// aapt resource value: 0x7f08000b
+			public const int WeatherName = 2131230731;
+			
+			// aapt resource value: 0x7f080010
+			public const int WindDirection = 2131230736;
+			
+			// aapt resource value: 0x7f080013
+			public const int WindSpeed = 2131230739;
 			
 			// aapt resource value: 0x7f080004
 			public const int imageView1 = 2131230724;
+			
+			// aapt resource value: 0x7f080008
+			public const int linearLayout1 = 2131230728;
+			
+			// aapt resource value: 0x7f080009
+			public const int linearLayout2 = 2131230729;
+			
+			// aapt resource value: 0x7f08000e
+			public const int linearLayout3 = 2131230734;
+			
+			// aapt resource value: 0x7f080011
+			public const int linearLayout4 = 2131230737;
 			
 			// aapt resource value: 0x7f080003
 			public const int loginButton = 2131230723;
@@ -87,8 +144,8 @@ namespace WeatherPOC_Android
 			// aapt resource value: 0x7f080000
 			public const int logoImage = 2131230720;
 			
-			// aapt resource value: 0x7f08000c
-			public const int menu_edit = 2131230732;
+			// aapt resource value: 0x7f08001f
+			public const int menu_edit = 2131230751;
 			
 			// aapt resource value: 0x7f080005
 			public const int toolbar = 2131230725;
@@ -128,7 +185,10 @@ namespace WeatherPOC_Android
 			public const int Weather = 2130968580;
 			
 			// aapt resource value: 0x7f040005
-			public const int WeatherItem = 2130968581;
+			public const int WeatherDetail = 2130968581;
+			
+			// aapt resource value: 0x7f040006
+			public const int WeatherItem = 2130968582;
 			
 			static Layout()
 			{
