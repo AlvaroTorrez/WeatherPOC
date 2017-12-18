@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="205">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="204">
+            <objects>
+                <viewController id="205" sceneMemberID="viewController" customClass="LoginViewController" storyboardIdentifier="LoginViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="202"/>
+                        <viewControllerLayoutGuide type="bottom" id="203"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="206">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1011" translatesAutoresizingMaskIntoConstraints="NO" image="Images/logo.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
+                                <rect key="frame" x="81" y="74" width="199" height="191"/>
+                                <constraints>
+                                    <constraint id="3056" firstItem="1011" firstAttribute="height" constant="191"/>
+                                    <constraint id="3057" firstItem="1011" firstAttribute="width" constant="199"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1215" translatesAutoresizingMaskIntoConstraints="NO" placeholder="User Email">
+                                <rect key="frame" x="79.5" y="368" width="200" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <constraints>
+                                    <constraint id="2820" firstItem="1215" firstAttribute="width" constant="200"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1216" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Password">
+                                <rect key="frame" x="79.5" y="421" width="200" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="password" secureTextEntry="YES"/>
+                                <constraints>
+                                    <constraint id="2597" firstItem="1216" firstAttribute="width" constant="200"/>
+                                </constraints>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1217" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="123" y="474" width="115" height="30"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.098039215686274508" green="0.11372549019607843" blue="0.14117647058823529" alpha="1"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="2365" firstItem="1217" firstAttribute="width" constant="115"/>
+                                </constraints>
+                                <connections/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1"/>
+                        <constraints>
+                            <constraint id="2353" firstItem="206" firstAttribute="bottom" secondItem="1215" secondAttribute="bottom" constant="269"/>
+                            <constraint id="2359" firstItem="1216" firstAttribute="centerY" secondItem="1215" secondAttribute="centerY" constant="53"/>
+                            <constraint id="2360" firstItem="1216" firstAttribute="centerX" secondItem="1215" secondAttribute="centerX"/>
+                            <constraint id="2363" firstItem="1217" firstAttribute="centerY" secondItem="1216" secondAttribute="centerY" constant="53"/>
+                            <constraint id="2364" firstItem="1217" firstAttribute="centerX" secondItem="1216" secondAttribute="centerX" constant="1"/>
+                            <constraint id="2821" firstItem="206" firstAttribute="centerX" secondItem="1215" secondAttribute="centerX" constant="8"/>
+                            <constraint id="3054" firstItem="206" firstAttribute="trailingMargin" secondItem="1011" secondAttribute="trailing" constant="79"/>
+                            <constraint id="3055" firstItem="1011" firstAttribute="top" secondItem="202" secondAttribute="bottom" constant="54"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="UserName" destination="1215" id="name-outlet-1215"/>
+                        <outlet property="Password" destination="1216" id="name-outlet-1216"/>
+                        <outlet property="SignIn" destination="1217" id="name-outlet-1217"/>
+                        <segue id="4295" destination="3920" kind="modal" identifier="GoWeatherView"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="207" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="-505"/>
+        </scene>
+        <scene sceneID="3523">
+            <objects>
+                <viewController id="3524" sceneMemberID="viewController" customClass="WeatherListViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3521"/>
+                        <viewControllerLayoutGuide type="bottom" id="3522"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3525">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem id="3994" key="navigationItem" title="Weather Bolivia">
+                        <rightBarButtonItems>
+                            <barButtonItem id="4753" title="Sign out">
+                                <connections>
+                                    <segue id="6227" destination="205" kind="modal" identifier="GoLogin"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem id="4995" systemItem="refresh" width="0"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Signout" destination="4753" id="name-outlet-4753"/>
+                        <outlet property="Refresh" destination="4995" id="name-outlet-4995"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3526" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="339"/>
+        </scene>
+        <scene sceneID="3919">
+            <objects>
+                <navigationController id="3920" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3922">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="3995" destination="3524" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3923" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337" y="-514"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Images/logo.png" width="400" height="400"/>
+    </resources>
+</document>
