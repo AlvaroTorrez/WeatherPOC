@@ -2,6 +2,7 @@
 using Foundation;
 using Newtonsoft.Json;
 using UIKit;
+using WeatherPOC_IOS.Helpers;
 using WeatherPOC_ShareCode;
 using WeatherPOC_ShareCode.LoginModule;
 
@@ -10,6 +11,7 @@ namespace WeatherPOC_IOS.Login
     public partial class LoginViewController : UIViewController
     {
         private LoginUser loginUser;
+        private LoadingOverlay loadPop;
 
         public LoginViewController(IntPtr handle) : base(handle)
         {
@@ -20,6 +22,10 @@ namespace WeatherPOC_IOS.Login
         {
             base.ViewDidLoad();
             SignIn.TouchUpInside += SignIn_TouchButton;
+            var bounds = UIScreen.MainScreen.Bounds;
+
+            loadPop = new LoadingOverlay(bounds);
+            View.Add(loadPop);
         }
 
         public override void ViewDidAppear(bool animated) {
@@ -32,6 +38,7 @@ namespace WeatherPOC_IOS.Login
                     PerformSegue("GoWeatherView", this);
                 }    
             }
+            loadPop.Hide();
         }
 
         private void SignIn_TouchButton(object sender, EventArgs ea)

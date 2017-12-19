@@ -78,37 +78,6 @@
             </objects>
             <point key="canvasLocation" x="-174" y="-505"/>
         </scene>
-        <scene sceneID="3523">
-            <objects>
-                <viewController id="3524" sceneMemberID="viewController" customClass="WeatherListViewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3521"/>
-                        <viewControllerLayoutGuide type="bottom" id="3522"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3525">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem id="3994" key="navigationItem" title="Weather Bolivia">
-                        <rightBarButtonItems>
-                            <barButtonItem id="4753" title="Sign out">
-                                <connections>
-                                    <segue id="6227" destination="205" kind="modal" identifier="GoLogin"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem id="4995" systemItem="refresh" width="0"/>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="Signout" destination="4753" id="name-outlet-4753"/>
-                        <outlet property="Refresh" destination="4995" id="name-outlet-4995"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3526" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="893" y="339"/>
-        </scene>
         <scene sceneID="3919">
             <objects>
                 <navigationController id="3920" sceneMemberID="viewController">
@@ -117,12 +86,45 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue id="3995" destination="3524" kind="relationship" relationship="rootViewController"/>
+                        <segue id="6854" destination="6480" kind="relationship" relationship="rootViewController"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3923" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="337" y="-514"/>
+            <point key="canvasLocation" x="322" y="-521"/>
+        </scene>
+        <scene sceneID="6479">
+            <objects>
+                <tableViewController id="6480" sceneMemberID="viewController" customClass="WeatherTableViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="6481" opaque="NO" showsHorizontalScrollIndicator="NO" separatorStyle="none">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.16862745098039217" green="0.18431372549019609" blue="0.21176470588235294" alpha="1"/>
+                        <connections>
+                            <outlet property="dataSource" destination="6480" id="6482"/>
+                            <outlet property="delegate" destination="6480" id="6483"/>
+                        </connections>
+                        <inset key="separatorInset" minX="0" minY="0" maxX="0" maxY="0"/>
+                    </tableView>
+                    <navigationItem id="6853" key="navigationItem" title="Weather Bolivia">
+                        <rightBarButtonItems>
+                            <barButtonItem id="6856" title="Sing out">
+                                <connections>
+                                    <segue id="21739" destination="205" kind="modal" identifier="GoLogin"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem id="6857" systemItem="refresh"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Signout" destination="6856" id="name-outlet-6856"/>
+                        <outlet property="Refresh" destination="6857" id="name-outlet-6857"/>
+                        <outlet property="NavBarWeatherList" destination="6853" id="name-outlet-6853"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6486" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="318"/>
         </scene>
     </scenes>
     <resources>
