@@ -11,9 +11,13 @@ using UIKit;
 
 namespace WeatherPOC_IOS
 {
-    [Register ("WeatherListViewController")]
-    partial class WeatherListViewController
+    [Register ("WeatherTableViewController")]
+    partial class WeatherTableViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UINavigationItem NavBarWeatherList { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem Refresh { get; set; }
@@ -24,6 +28,11 @@ namespace WeatherPOC_IOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (NavBarWeatherList != null) {
+                NavBarWeatherList.Dispose ();
+                NavBarWeatherList = null;
+            }
+
             if (Refresh != null) {
                 Refresh.Dispose ();
                 Refresh = null;

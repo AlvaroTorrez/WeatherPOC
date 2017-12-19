@@ -91,15 +91,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <None Include="packages.config" />
-    <InterfaceDefinition Include="Weather.storyboard" />
     <Compile Include="Login\LoginViewController.cs" />
     <Compile Include="Login\LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="WeatherList\WeatherListViewController.cs" />
-    <Compile Include="WeatherList\WeatherListViewController.designer.cs">
-      <DependentUpon>WeatherListViewController.cs</DependentUpon>
+    <Compile Include="WeatherList\WeatherTableViewController.cs" />
+    <Compile Include="WeatherList\WeatherTableViewController.designer.cs">
+      <DependentUpon>WeatherTableViewController.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="WeatherList\Cell.xib" />
+    <Compile Include="WeatherList\Cell.cs" />
+    <Compile Include="WeatherList\Cell.designer.cs">
+      <DependentUpon>Cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeatherList\DataSource.cs" />
+    <Compile Include="Helpers\LoadingOverlay.cs" />
+    <InterfaceDefinition Include="Weather.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -126,6 +133,7 @@
     <Folder Include="Login\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="WeatherList\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\logo.png" />
