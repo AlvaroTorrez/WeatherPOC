@@ -18,7 +18,6 @@ namespace WeatherPOC_IOS.WeatherList
 
         protected Cell(IntPtr handle) : base(handle)
         {
-            // Note: this .ctor should not contain any initialization logic.
 
         }
 
@@ -32,9 +31,8 @@ namespace WeatherPOC_IOS.WeatherList
 
         private UIImage FromUrl(string uri)
         {
-            using (var url = new NSUrl(uri))
-            using (var data = NSData.FromUrl(url))
-                return UIImage.LoadFromData(data);
+            var dataImage = NSData.FromUrl(new NSUrl(uri));
+            return UIImage.LoadFromData(dataImage);
         }
     }
 
