@@ -48,6 +48,8 @@ namespace WeatherPOC_ShareCode.WeatherModule
         public UnitsData Units { get; set; }
         public LocationData Location { get; set; }
         public ItemData Item { get; set; }
+        public Wind wind { get; set; }
+        public Atmosphere Atmosphere { get; set; }
     }
 
     public class UnitsData
@@ -63,6 +65,21 @@ namespace WeatherPOC_ShareCode.WeatherModule
         public string City { get; set; }
         public string Country { get; set; }
         public string Region { get; set; }
+    }
+
+    public class Wind
+    {
+        public string Chill { get; set; }
+        public string Direction { get; set; }
+        public string Speed { get; set; }
+    }
+
+    public class Atmosphere
+    {
+        public string Humidity { get; set; }
+        public string Pressure { get; set; }
+        public string Rising { get; set; }
+        public string Visibility { get; set; }
     }
 
     public class ItemData

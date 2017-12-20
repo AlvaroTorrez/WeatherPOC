@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#393E46"
+    android:paddingEnd="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:id="@+id/DetailView">
+    <TextView
+        android:text="Cochabamba, Bolivia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TitleDepartment"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="#00ADB5" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="190.7dp"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:text="36C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Temperature"
+                android:textSize="50dp"
+                android:textAlignment="center"
+                android:textColor="#00ADB5" />
+            <TextView
+                android:text="Cloudy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/WeatherName"
+                android:textAlignment="center"
+                android:textColor="#00ADB5" />
+        </LinearLayout>
+        <ImageView
+            android:src="@drawable/logo"
+            android:id="@+id/ImagenWeather"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+    </LinearLayout>
+    <TextView
+        android:text="Wind :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LabelWind"
+        android:textColor="#00ADB5" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3">
+        <TextView
+            android:text="Direction :"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:id="@+id/LabelWindDirection"
+            android:textAlignment="textEnd"
+            android:textColor="#00ADB5"
+            android:gravity="right" />
+        <TextView
+            android:text="205"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/WindDirection"
+            android:layout_marginLeft="10dp"
+            android:textColor="#00ADB5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:text="Speed :"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:id="@+id/LabelWindSpeed"
+            android:textAlignment="textEnd"
+            android:textColor="#00ADB5"
+            android:gravity="right" />
+        <TextView
+            android:text="11.25 Km/h"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/WindSpeed"
+            android:layout_marginLeft="10dp"
+            android:textColor="#00ADB5" />
+    </LinearLayout>
+    <TextView
+        android:text="Atmosphere :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LabelAtmosphere"
+        android:textColor="#00ADB5" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3">
+        <TextView
+            android:text="Humidity :"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:id="@+id/LabelAtmosHumidity"
+            android:textAlignment="textEnd"
+            android:textColor="#00ADB5"
+            android:gravity="right" />
+        <TextView
+            android:text="205"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/AtmosHumidity"
+            android:layout_marginLeft="10dp"
+            android:textColor="#00ADB5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:text="Pressure :"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:id="@+id/LabelAtmosPressure"
+            android:textAlignment="textEnd"
+            android:textColor="#00ADB5"
+            android:gravity="right" />
+        <TextView
+            android:text="11.25 Km/h"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/AtmosPressure"
+            android:layout_marginLeft="10dp"
+            android:textColor="#00ADB5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:text="Visibility :"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:id="@+id/LabelAtmosVisibility"
+            android:textAlignment="textEnd"
+            android:textColor="#00ADB5"
+            android:gravity="right" />
+        <TextView
+            android:text="11.25 Km/h"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/AtmosVisibility"
+            android:layout_marginLeft="10dp"
+            android:textColor="#00ADB5" />
+    </LinearLayout>
+</LinearLayout>
