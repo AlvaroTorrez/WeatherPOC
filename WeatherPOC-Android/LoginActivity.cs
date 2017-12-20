@@ -53,6 +53,7 @@ namespace WeatherPOC_Android
                 var wheather = new Intent(this, typeof(WeatherActivity));
                 wheather.PutExtra(GlobalConstants.USER_SESSION, output);
                 StartActivity(wheather);
+                this.Finish();
             }
             else
             {

@@ -19,7 +19,7 @@ namespace WeatherPOC_ShareCode.WeatherModule
             new City("Potosi", "Bolivia"),
             new City("Sucre", "Bolivia"),
             new City("Tarija", "Bolivia"),
-            new City("Santa Cruz de la sierra", "Bolivia"),
+            new City("Santa Cruz", "Bolivia"),
             new City("Trinidad", "Bolivia"),
             new City("Cobija", "Bolivia"),
         };

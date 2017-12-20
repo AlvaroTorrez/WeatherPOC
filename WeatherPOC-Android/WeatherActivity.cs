@@ -118,6 +118,7 @@ namespace WeatherPOC_Android
             editor.Clear();
             editor.Apply();
             var mainActivity = new Intent(this, typeof(MainActivity));
+            this.Finish();
             StartActivity(mainActivity);
         }
     }
