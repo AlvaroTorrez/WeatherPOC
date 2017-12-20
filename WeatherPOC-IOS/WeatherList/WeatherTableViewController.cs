@@ -4,6 +4,8 @@ using UIKit;
 using WeatherPOC_IOS.WeatherList;
 using WeatherPOC_IOS.Helpers;
 using System.Threading.Tasks;
+using WeatherPOC_ShareCode.WeatherModule;
+using WeatherPOC_IOS.WeatherDetail;
 
 namespace WeatherPOC_IOS
 {
@@ -67,7 +69,22 @@ namespace WeatherPOC_IOS
                 TableView.Hidden = false;
                 NavigationController.SetNavigationBarHidden(false, true);
             });
+        }
 
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "GoWeatherDetail")
+            {
+                WeatherDetailViewController navctlr = segue.DestinationViewController as WeatherDetailViewController;
+                if (navctlr != null)
+                {
+                    var source = TableView.Source as DataSource;
+                    var rowPath = (NSIndexPath)sender;
+                    WeatherData item = source.GetItem(rowPath.Row);
+                    navctlr.CurrentWeather = item;
+                }
+            }
         }
     }
 }

@@ -32,5 +32,15 @@ namespace WeatherPOC_IOS.WeatherList
         {
             return DepartmentList.Count;
         }
+
+        public WeatherData GetItem(int id)
+        {
+            return DepartmentList[id];
+        }
+
+        public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+        {
+            weatherTableViewController.PerformSegue ("GoWeatherDetail", indexPath);
+        } 
     }
 }

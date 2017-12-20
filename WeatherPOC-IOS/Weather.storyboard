@@ -120,11 +120,29 @@
                         <outlet property="Signout" destination="6856" id="name-outlet-6856"/>
                         <outlet property="Refresh" destination="6857" id="name-outlet-6857"/>
                         <outlet property="NavBarWeatherList" destination="6853" id="name-outlet-6853"/>
+                        <segue id="22312" destination="22246" kind="push" identifier="GoWeatherDetail"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6486" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901" y="318"/>
+        </scene>
+        <scene sceneID="22245">
+            <objects>
+                <viewController id="22246" sceneMemberID="viewController" customClass="WeatherDetailViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="22243"/>
+                        <viewControllerLayoutGuide type="bottom" id="22244"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22247">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22248" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534" y="326"/>
         </scene>
     </scenes>
     <resources>
