@@ -9,6 +9,7 @@
     <RootNamespace>WeatherPOC_IOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>WeatherPOCIOS</AssemblyName>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,11 +87,26 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <None Include="packages.config" />
+    <Compile Include="Login\LoginViewController.cs" />
+    <Compile Include="Login\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeatherList\WeatherTableViewController.cs" />
+    <Compile Include="WeatherList\WeatherTableViewController.designer.cs">
+      <DependentUpon>WeatherTableViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="WeatherList\Cell.xib" />
+    <Compile Include="WeatherList\Cell.cs" />
+    <Compile Include="WeatherList\Cell.designer.cs">
+      <DependentUpon>Cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeatherList\DataSource.cs" />
+    <Compile Include="Helpers\LoadingOverlay.cs" />
+    <InterfaceDefinition Include="Weather.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -112,6 +128,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Login\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="WeatherList\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeatherPOC-ShareCode\WeatherPOC-ShareCode.csproj">
+      <Project>{E8028A19-A1C1-4F82-8B02-7C7D37604030}</Project>
+      <Name>WeatherPOC-ShareCode</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
