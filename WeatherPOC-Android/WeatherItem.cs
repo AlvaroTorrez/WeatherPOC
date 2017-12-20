@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using WeatherPOC_Android.Helper;
 using WeatherPOC_ShareCode.WeatherModule;
 
 namespace WeatherPOC_Android
@@ -47,25 +48,9 @@ namespace WeatherPOC_Android
                 view = context.LayoutInflater.Inflate(Resource.Layout.WeatherItem, null);
             view.FindViewById<TextView>(Resource.Id.DepartName).Text = item.Location.City;
             view.FindViewById<TextView>(Resource.Id.Temperature).Text = item.Item.Condition.Temp + "º" + item.Units.Temperature;
-            var imageBitmap = GetImageBitmapFromUrl("http://l.yimg.com/a/i/us/we/52/" + item.Item.Condition.Code + ".gif");
+            var imageBitmap = HelperImage.GetImageBitmapFromUrl("http://l.yimg.com/a/i/us/we/52/" + item.Item.Condition.Code + ".gif");
             view.FindViewById<ImageView>(Resource.Id.WeatherIcon).SetImageBitmap(imageBitmap);
             return view;
-        }
-
-        private Bitmap GetImageBitmapFromUrl(string url)
-        {
-            Bitmap imageBitmap = null;
-
-            using (var webClient = new WebClient())
-            {
-                var imageBytes = webClient.DownloadData(url);
-                if (imageBytes != null && imageBytes.Length > 0)
-                {
-                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-                }
-            }
-
-            return imageBitmap;
         }
     }
 }
