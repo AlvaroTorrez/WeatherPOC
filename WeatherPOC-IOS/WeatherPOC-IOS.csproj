@@ -111,6 +111,11 @@
     <Compile Include="WeatherDetail\WeatherDetailViewController.designer.cs">
       <DependentUpon>WeatherDetailViewController.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="WeatherDetail\ExtraPronostic.xib" />
+    <Compile Include="WeatherDetail\ExtraPronostic.cs" />
+    <Compile Include="WeatherDetail\ExtraPronostic.designer.cs">
+      <DependentUpon>ExtraPronostic.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -129,6 +134,8 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="MonoTouch.NUnitLite" />
+    <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
